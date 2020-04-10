@@ -1,19 +1,70 @@
+@import url(//db.onlinewebfonts.com/c/efc7a6226bb9d41432255d1553a16c8d?family=VogaW00-Medium);
+
 :root {
-    --grey-900: hsl(219, 22%, 12.5%);
-    --grey-800: hsl(219, 19%, 24%);
-    --grey-700: hsl(219, 13%, 41%);
-    --grey-600: hsl(219, 15%, 57%);
-    --grey-500: hsl(213, 23%, 69%);
-    --grey-400: hsl(208, 23%, 77%);
-    --grey-300: hsl(208, 23%, 86%);
-    --grey-200: hsl(208, 33%, 94%);
-    --grey-100: hsl(220, 20%, 97%);
+    --grey-900: hsl(41, 22%, 10%);
+    --grey-800: hsl(41, 19%, 19%);
+    --grey-700: hsl(41, 13%, 41%);
+    --grey-600: hsl(45, 15%, 57%);
+    --grey-500: hsl(41, 23%, 69%);
+    --grey-400: hsl(41, 23%, 77%);
+    --grey-300: hsl(41, 23%, 86%);
+    --grey-200: hsl(41, 33%, 94%);
+    --grey-100: hsl(41, 20%, 97%);
+
+    --main-900: hsl(48, 96%, 10%);
+    --main-800: hsl(48, 96%, 21%);
+    --main-700: hsl(48, 96%, 30%);
+    --main-600: hsl(48, 96%, 45%);
+    --main-500: hsl(48, 96%, 61%);
+    --main-400: hsl(48, 96%, 71%);
+    --main-300: hsl(48, 96%, 80%);
+    --main-200: hsl(48, 96%, 88%);
+    --main-100: hsl(48, 96%, 95%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'VogaW00-Medium';
+    color: var(--grey-900);
+    letter-spacing: 1.5rem;
+    font-size: 10rem;
+    margin-top: 100px;
+    margin-bottom: 2rem;
+}
+
+#divider-line {
+    background-color: black;
+    height: .2rem;
+    width: 800px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--grey-900);
+    font-weight: 300;
+    letter-spacing: .5rem;
+    margin-top: 2rem;
+    font-size: 4rem;
 }
 
 .swatch-container {
@@ -24,7 +75,7 @@
 .swatch {
     width: 100px;
     height: 100px;
-    margin: 100px 5px;
+    margin: 100px 5px 25px;
     background-color: red;
 }
 
@@ -64,15 +115,38 @@
     background-color: var(--grey-100);
 }
 
+[id="11"] {
+    background-color: var(--main-900);
+}
 
+[id="12"] {
+    background-color: var(--main-800);
+}
 
+[id="13"] {
+    background-color: var(--main-700);
+}
 
+[id="14"] {
+    background-color: var(--main-600);
+}
 
+[id="15"] {
+    background-color: var(--main-500);
+}
 
+[id="16"] {
+    background-color: var(--main-400);
+}
 
-/* grey colors */
+[id="17"] {
+    background-color: var(--main-300);
+}
 
+[id="18"] {
+    background-color: var(--main-200);
+}
 
-/* 158 177 194
-
-246 247 249 */
+[id="19"] {
+    background-color: var(--main-100);
+}
