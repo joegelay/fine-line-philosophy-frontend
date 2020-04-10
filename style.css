@@ -45,7 +45,7 @@ body {
     width: 100%;
 }
 
-.landing {
+#landing {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,6 +107,20 @@ h2 {
 
 main {
     height: 100vh;
+}
+
+#main {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+#main.fade-in {
+    opacity: 1;
+}
+
+#socrates {
+    margin-top: 20vh;
+    height: 50vh;
 }
 
 
