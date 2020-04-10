@@ -1,0 +1,78 @@
+:root {
+    --grey-900: hsl(219, 22%, 12.5%);
+    --grey-800: hsl(219, 19%, 24%);
+    --grey-700: hsl(219, 13%, 41%);
+    --grey-600: hsl(219, 15%, 57%);
+    --grey-500: hsl(213, 23%, 69%);
+    --grey-400: hsl(208, 23%, 77%);
+    --grey-300: hsl(208, 23%, 86%);
+    --grey-200: hsl(208, 33%, 94%);
+    --grey-100: hsl(220, 20%, 97%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swatch-container {
+    display: flex;
+    justify-content: center 
+}
+
+.swatch {
+    width: 100px;
+    height: 100px;
+    margin: 100px 5px;
+    background-color: red;
+}
+
+[id="1"] {
+    background-color: var(--grey-900);
+}
+
+[id="2"] {
+    background-color: var(--grey-800);
+}
+
+[id="3"] {
+    background-color: var(--grey-700);
+}
+
+[id="4"] {
+    background-color: var(--grey-600);
+}
+
+[id="5"] {
+    background-color: var(--grey-500);
+}
+
+[id="6"] {
+    background-color: var(--grey-400);
+}
+
+[id="7"] {
+    background-color: var(--grey-300);
+}
+
+[id="8"] {
+    background-color: var(--grey-200);
+}
+
+[id="9"] {
+    background-color: var(--grey-100);
+}
+
+
+
+
+
+
+
+/* grey colors */
+
+
+/* 158 177 194
+
+246 247 249 */
