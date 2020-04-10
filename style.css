@@ -28,6 +28,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -36,13 +40,19 @@ body {
     background-color: var(--grey-100);
 }
 
-header {
+.panel {
+    height: 100%;
+    width: 100%;
+}
+
+.landing {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     backface-visibility: hidden;
-    margin-top: 10rem;
+    margin-top: 4rem;
+    height: 100vh;
 }
 
 h1 {
@@ -86,6 +96,24 @@ h2 {
 }
 
 
+#down-arrow {
+    margin-top: 7rem;
+    height: 2.5rem;
+
+    animation: bounce .5s; 
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+}
+
+main {
+    height: 100vh;
+}
+
+
+@keyframes bounce{ 
+    0% { transform: translate3d(0, 0, 0); opacity: 0;} 
+    100% { transform: translate3d(0, 10px, 0);} 
+} 
 
 @keyframes moveInLeft {
     0% {
