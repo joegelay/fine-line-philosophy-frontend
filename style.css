@@ -15,7 +15,7 @@
     --main-800: hsl(48, 96%, 21%);
     --main-700: hsl(48, 96%, 30%);
     --main-600: hsl(48, 96%, 45%);
-    --main-500: hsl(48, 96%, 61%);
+    --main-500: hsl(48, 100%, 50%);
     --main-400: hsl(48, 96%, 71%);
     --main-300: hsl(48, 96%, 80%);
     --main-200: hsl(48, 96%, 88%);
@@ -26,9 +26,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
@@ -45,6 +42,10 @@ body {
     width: 100%;
 }
 
+.yellow {
+    color: var(--main-500);
+}
+
 #landing {
     display: flex;
     flex-direction: column;
@@ -53,24 +54,27 @@ body {
     backface-visibility: hidden;
     margin-top: 4rem;
     height: 100vh;
+    opacity: 0;
+    transition: all 1s ease-out;
+
+    color: var(--grey-900);
 }
 
-h1 {
+#landing.fade-in {
+    opacity: 1;
+}
+
+#logo-one {
     font-family: 'VogaW00-Medium';
-    color: var(--grey-900);
     letter-spacing: 1.5rem;
     font-size: 10rem;
     margin-left: 2rem;
     margin-bottom: 2rem;
-
     animation-name: moveInLeft;
     animation-duration: 2s;
     animation-timing-function: ease-out;
 }
 
-.yellow {
-    color: var(--main-500);
-}
 
 img {
     width: 50rem;
@@ -81,9 +85,8 @@ img {
     animation-timing-function: ease-in-out;
 }
 
-h2 {
+#logo-two {
     font-family: 'Montserrat', sans-serif;
-    color: var(--grey-900);
     font-weight: 300;
     letter-spacing: .5rem;
     margin-top: 2rem;
@@ -106,22 +109,36 @@ h2 {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
 #main {
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 2s ease-out;
 }
 
 #main.fade-in {
     opacity: 1;
 }
 
-#socrates {
-    margin-top: 20vh;
-    height: 50vh;
+#tag-line {
+    font-family: 'VogaW00-Medium';
+    color: var(--grey-900);
+    font-size: 7rem;
+    margin: 0rem 0rem 2rem 0rem;
 }
+
+#pairs {
+    font-family: 'VogaW00-Medium';
+    color: var(--grey-900);
+    /* letter-spacing: 1rem; */
+    font-size: 5.5rem;
+}
+
 
 
 @keyframes bounce{ 
