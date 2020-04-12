@@ -8,10 +8,6 @@ const landingScene = new ScrollMagic.Scene({
     triggerHook: 1
 })
 .setClassToggle('#landing', 'fade-in') // add class to main
-.addIndicators({
-    name: 'landing fade',
-    colorTrigger: 'red',
-}) // this requires the plugin that is already attached to the html. optional object to customize.
 .addTo(controller);
 
 const mainScene = new ScrollMagic.Scene({
@@ -22,10 +18,6 @@ const mainScene = new ScrollMagic.Scene({
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
 .setClassToggle('#main', 'fade-in') // add class to main
-.addIndicators({
-    name: 'main fade',
-    colorTrigger: 'black',
-}) // this requires the plugin that is already attached to the html. optional object to customize.
 .addTo(controller);
 
 const typingScene = new ScrollMagic.Scene({
@@ -36,8 +28,14 @@ const typingScene = new ScrollMagic.Scene({
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
 .setClassToggle('#tag-line', 'animate') // add class to main
-.addIndicators({
-    name: 'typing scene',
-    colorTrigger: 'red',
-}) // this requires the plugin that is already attached to the html. optional object to customize.
+.addTo(controller);
+
+const pairScene = new ScrollMagic.Scene({
+    triggerElement: '#main',
+    duration: '100%',
+    triggerHook: .5,
+    // reverse: false 
+    // reverse false mean animation will only happen once and not repeat if scrolled by again
+})
+.setClassToggle('#sliding-vertical', 'fade-in') // add class to main
 .addTo(controller);
