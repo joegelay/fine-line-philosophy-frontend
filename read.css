@@ -129,6 +129,13 @@ a:hover {
     display: flex;
     justify-content: center;
   }
+
+  .select-selected:hover {
+    transform: scale(1.05);
+  }
+
+
+
   
   /* style the items (options), including the selected item: */
   .select-items div,.select-selected {
