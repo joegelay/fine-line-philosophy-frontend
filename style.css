@@ -165,7 +165,7 @@ main {
 }
 
 #sliding-vertical h2{
-    animation: topToBottom 10s linear infinite 0s;
+    animation: topToBottom 12.5s linear infinite 0s;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -178,6 +178,9 @@ main {
 }
 #sliding-vertical h2:nth-child(4){
 	animation-delay: 7.5s;
+}
+#sliding-vertical h2:nth-child(5){
+	animation-delay: 10s;
 }
 
 /*topToBottom Animation*/
