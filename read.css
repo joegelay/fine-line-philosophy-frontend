@@ -29,10 +29,6 @@
     scroll-behavior: smooth;
 }
 
-.yellow {
-    color: var(--main-500);
-}
-
 body {
     background-color: var(--grey-100);
 }
@@ -125,36 +121,19 @@ a:hover {
   
    /* this is what appears on the page */
   .select-selected {
-    background-color: var(--grey-900);
+    background-color: var(--grey-100);
     width: 1000px;
     font-family: 'VogaW00-Medium';
     font-size: 5.5rem;
-  }
-  
-  /* Style the arrow inside the select element: */
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0rem;
-    border: 6px solid transparent;
-    border-color: var(--grey-100) transparent transparent transparent;
-  }
-  
-  /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent var(--grey-100) transparent;
-    top: 7px;
+    text-decoration: underline var(--main-500);
+    display: flex;
+    justify-content: center;
   }
   
   /* style the items (options), including the selected item: */
   .select-items div,.select-selected {
-    color: var(--grey-100);
+    color: var(--grey-900);
     padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
     font-family: 'VogaW00-Medium';
     font-size: 5.5rem;
@@ -163,21 +142,25 @@ a:hover {
   /* Style items (options): */
   .select-items {
     position: absolute;
-    background-color: var(--grey-900);
+    background-color: var(--grey-100);
     top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
   }
   
-  /* Hide the items when the select box is closed: */
   .select-hide {
     display: none;
   }
   
   .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--main-300);
   }
+
+  .yellow {
+    color: var(--main-500);
+}
+
 
 
 
