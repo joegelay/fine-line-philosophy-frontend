@@ -89,25 +89,22 @@ a:hover {
 #idea-one-entries {
     display: flex;
     flex-direction: column;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .entry-card {
     width: 600px;
     height: 400px;
-    border: 1px solid red;
     margin-bottom: 1.5rem;
+    box-shadow: 0px 1px 2px 0 var(--grey-900);
+    background-color: var(--main-100);
 }
 
 #idea-one-entries {
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
-.entry-card-two {
-    width: 600px;
-    height: 400px;
-    border: 1px solid blue;
-    margin-bottom: 1.5rem;
-}
+
+
 
 /* The container must be positioned relative: */
 .custom-select {
