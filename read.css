@@ -122,7 +122,7 @@ a:hover {
    /* this is what appears on the page */
   .select-selected {
     background-color: var(--grey-100);
-    width: 1000px;
+    width: auto;
     font-family: 'VogaW00-Medium';
     font-size: 5.5rem;
     text-decoration: underline var(--main-500);
@@ -133,8 +133,6 @@ a:hover {
   .select-selected:hover {
     transform: scale(1.05);
   }
-
-
 
   
   /* style the items (options), including the selected item: */
