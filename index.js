@@ -7,7 +7,7 @@ const landingScene = new ScrollMagic.Scene({
     duration: '120%',
     triggerHook: 1
 })
-.setClassToggle('#landing', 'fade-in') // add class to main
+.setClassToggle('#landing', 'fade-in') 
 .addTo(controller);
 
 const mainScene = new ScrollMagic.Scene({
@@ -17,7 +17,7 @@ const mainScene = new ScrollMagic.Scene({
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
-.setClassToggle('#main', 'fade-in') // add class to main
+.setClassToggle('#main', 'fade-in') 
 .addTo(controller);
 
 const typingScene = new ScrollMagic.Scene({
@@ -27,7 +27,7 @@ const typingScene = new ScrollMagic.Scene({
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
-.setClassToggle('#tag-line', 'animate') // add class to main
+.setClassToggle('#tag-line', 'animate') 
 .addTo(controller);
 
 const pairScene = new ScrollMagic.Scene({
@@ -37,5 +37,15 @@ const pairScene = new ScrollMagic.Scene({
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
-.setClassToggle('#sliding-vertical', 'fade-in') // add class to main
+.setClassToggle('#sliding-vertical', 'fade-in') 
+.addTo(controller);
+
+const navScene = new ScrollMagic.Scene({
+    triggerElement: '#main',
+    duration: '100%',
+    triggerHook: .8,
+    // reverse: false 
+    // reverse false mean animation will only happen once and not repeat if scrolled by again
+})
+.setClassToggle('#read-write', 'fade-in') 
 .addTo(controller);

@@ -184,11 +184,18 @@ main {
 }
 
 #read-write {
+    opacity: 0;
     position: absolute;
     margin-top: 17rem;
 
     display: flex;
     justify-content: center;
+}
+
+#read-write.fade-in {
+    opacity: 1;
+    transition-duration: 4s;
+    transition-delay: 4.5s;
 }
 
 .read-write-nav {
@@ -239,7 +246,7 @@ main {
 	100% { opacity: 0; }
 }
 
-/* @keyframes animated-text{
+@keyframes animated-text{
     from{width: 0;}
     to{width: 123vh;}
 }
@@ -247,7 +254,7 @@ main {
 @keyframes animated-cursor{
     from{border-right-color: var(--main-500);}
     to{border-right-color: transparent;}
-} */
+}
 
 @keyframes bounce{ 
     0% { transform: translate3d(0, 0, 0); opacity: 0;} 
