@@ -183,7 +183,52 @@ main {
 	animation-delay: 10s;
 }
 
-/*topToBottom Animation*/
+#read-write {
+    position: absolute;
+    margin-top: 17rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.read-write-nav {
+    font-family: 'VogaW00-Medium';
+    color: var(--grey-800);
+    font-weight: normal;
+    font-size: 3.2rem;
+}
+
+#read {
+    display: flex;
+    align-items: baseline;
+    margin-left: -2rem;
+}
+
+#left-arrow {
+    width: 100px;
+
+    animation: bounce-left .5s;
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+}
+
+#write {
+    display: flex;
+    align-items: baseline;
+    margin-left: 31rem;
+}
+
+#right-arrow {
+    width: 80px;
+
+    animation: bounce-right .5s;
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+}
+
+
+
+
 @keyframes topToBottom{
 	0% { opacity: 0; }
 	5% { opacity: 0; transform: translateY(-50px); }
@@ -194,7 +239,7 @@ main {
 	100% { opacity: 0; }
 }
 
-@keyframes animated-text{
+/* @keyframes animated-text{
     from{width: 0;}
     to{width: 123vh;}
 }
@@ -202,11 +247,21 @@ main {
 @keyframes animated-cursor{
     from{border-right-color: var(--main-500);}
     to{border-right-color: transparent;}
-}
+} */
 
 @keyframes bounce{ 
     0% { transform: translate3d(0, 0, 0); opacity: 0;} 
     100% { transform: translate3d(0, 10px, 0);} 
+} 
+
+@keyframes bounce-left{ 
+    0% { transform: translate3d(0, 0, 0); opacity: 0;} 
+    100% { transform: translate3d(10px, 0, 0);} 
+} 
+
+@keyframes bounce-right{ 
+    0% { transform: translate3d(10px, 0, 0); opacity: 0;} 
+    100% { transform: translate3d(0px, 0, 0);} 
 } 
 
 @keyframes moveInLeft {
