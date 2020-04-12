@@ -195,7 +195,7 @@ main {
 #read-write.fade-in {
     opacity: 1;
     transition-duration: 4s;
-    transition-delay: 4.5s;
+    transition-delay: 5s;
 }
 
 .read-write-nav {
@@ -203,37 +203,54 @@ main {
     color: var(--grey-800);
     font-weight: normal;
     font-size: 3.2rem;
+    margin-bottom: 10rem;
 }
 
 #read {
     display: flex;
     align-items: baseline;
-    margin-left: -2rem;
-}
-
-#left-arrow {
-    width: 100px;
-
-    animation: bounce-left .5s;
-    animation-direction: alternate; 
-    animation-iteration-count: infinite; 
+    margin-left: 1rem;
 }
 
 #write {
     display: flex;
     align-items: baseline;
-    margin-left: 31rem;
+    margin-left: 5rem;
 }
 
-#right-arrow {
+/* #left-arrow {
+    width: 100px;
+
+    animation: bounce-left .5s;
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+} */
+
+/* #right-arrow {
     width: 80px;
 
     animation: bounce-right .5s;
     animation-direction: alternate; 
     animation-iteration-count: infinite; 
+} */
+
+a {
+    color: var(--main-500);
+    transition: all .2s ease-in-out;
 }
 
+a:link {
+    color: var(--main-500);
+}
 
+a:visited {
+    color: var(--main-500);
+}
+
+a:hover {
+    color: var(--main-300);
+    transform: scale(1.1);
+}
 
 
 @keyframes topToBottom{
