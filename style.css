@@ -136,7 +136,7 @@ main {
     font-family: 'VogaW00-Medium';
     color: var(--grey-900);
     font-size: 7rem;
-    margin: 0rem 0rem 2rem 0rem;
+    margin: -350px 0rem 2rem 0rem;
     visibility: visible;
    
     border-right: solid .5rem;
@@ -160,7 +160,8 @@ main {
 
 #sliding-vertical.fade-in {
     opacity: 1;
-    transition-delay: 5.35s;
+    transition-duration: 4s;
+    transition-delay: 4.5s;
 }
 
 #sliding-vertical h2{

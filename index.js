@@ -13,7 +13,7 @@ const landingScene = new ScrollMagic.Scene({
 const mainScene = new ScrollMagic.Scene({
     triggerElement: '#main',
     duration: '100%',
-    triggerHook: .5,
+    triggerHook: .8,
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
@@ -23,7 +23,7 @@ const mainScene = new ScrollMagic.Scene({
 const typingScene = new ScrollMagic.Scene({
     triggerElement: '#main',
     duration: '100%',
-    triggerHook: .5,
+    triggerHook: .8,
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
@@ -33,7 +33,7 @@ const typingScene = new ScrollMagic.Scene({
 const pairScene = new ScrollMagic.Scene({
     triggerElement: '#main',
     duration: '100%',
-    triggerHook: .5,
+    triggerHook: .8,
     // reverse: false 
     // reverse false mean animation will only happen once and not repeat if scrolled by again
 })
