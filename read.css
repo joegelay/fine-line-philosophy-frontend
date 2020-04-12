@@ -1,0 +1,183 @@
+@import url(//db.onlinewebfonts.com/c/efc7a6226bb9d41432255d1553a16c8d?family=VogaW00-Medium);
+
+:root {
+    --grey-900: hsl(41, 22%, 10%);
+    --grey-800: hsl(41, 19%, 19%);
+    --grey-700: hsl(41, 13%, 41%);
+    --grey-600: hsl(45, 15%, 57%);
+    --grey-500: hsl(41, 23%, 69%);
+    --grey-400: hsl(41, 23%, 77%);
+    --grey-300: hsl(41, 23%, 86%);
+    --grey-200: hsl(41, 33%, 94%);
+    --grey-100: hsl(41, 20%, 97%);
+
+    --main-900: hsl(48, 96%, 10%);
+    --main-800: hsl(48, 96%, 21%);
+    --main-700: hsl(48, 96%, 30%);
+    --main-600: hsl(48, 96%, 45%);
+    --main-500: hsl(48, 100%, 50%);
+    --main-400: hsl(48, 96%, 71%);
+    --main-300: hsl(48, 96%, 80%);
+    --main-200: hsl(48, 96%, 88%);
+    --main-100: hsl(48, 96%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.yellow {
+    color: var(--main-500);
+}
+
+body {
+    background-color: var(--grey-100);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+header {
+    margin-bottom: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+#main.fade-in {
+    opacity: 1;
+}
+
+.pairs {
+    font-family: 'VogaW00-Medium';
+    color: var(--grey-900);
+    font-size: 5.5rem;
+}
+
+a {
+    color: var(--main-500);
+    transition: all .2s ease-in-out;
+}
+
+a:link {
+    color: var(--main-500);
+}
+
+a:visited {
+    color: var(--main-500);
+}
+
+a:hover {
+    color: var(--main-300);
+    transform: scale(1.1);
+}
+
+#entries {
+    display: flex;
+    justify-content: space-between;
+}
+
+#idea-one-entries {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+.entry-card {
+    width: 600px;
+    height: 400px;
+    border: 1px solid red;
+    margin-bottom: 1.5rem;
+}
+
+#idea-one-entries {
+    margin-left: 1rem;
+}
+.entry-card-two {
+    width: 600px;
+    height: 400px;
+    border: 1px solid blue;
+    margin-bottom: 1.5rem;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: 'VogaW00-Medium';
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+   /* this is what appears on the page */
+  .select-selected {
+    background-color: var(--grey-900);
+    width: 1000px;
+    font-family: 'VogaW00-Medium';
+    font-size: 5.5rem;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0rem;
+    border: 6px solid transparent;
+    border-color: var(--grey-100) transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent var(--grey-100) transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: var(--grey-100);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    font-family: 'VogaW00-Medium';
+    font-size: 5.5rem;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: var(--grey-900);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+
+
