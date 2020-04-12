@@ -127,11 +127,16 @@ main {
 }
 
 #tag-line {
+    visibility: hidden;
+}
+
+#tag-line.animate {
     font-family: 'VogaW00-Medium';
     color: var(--grey-900);
     font-size: 7rem;
     margin: 0rem 0rem 2rem 0rem;
-
+    visibility: visible;
+   
     border-right: solid .5rem;
     border-color: var(--main-500);
     white-space: nowrap;

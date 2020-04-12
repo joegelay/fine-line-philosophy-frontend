@@ -14,8 +14,7 @@ const landingScene = new ScrollMagic.Scene({
 }) // this requires the plugin that is already attached to the html. optional object to customize.
 .addTo(controller);
 
-
-const ourScene = new ScrollMagic.Scene({
+const mainScene = new ScrollMagic.Scene({
     triggerElement: '#main',
     duration: '100%',
     triggerHook: .5,
@@ -26,5 +25,19 @@ const ourScene = new ScrollMagic.Scene({
 .addIndicators({
     name: 'main fade',
     colorTrigger: 'black',
+}) // this requires the plugin that is already attached to the html. optional object to customize.
+.addTo(controller);
+
+const typingScene = new ScrollMagic.Scene({
+    triggerElement: '#main',
+    duration: '100%',
+    triggerHook: .5,
+    // reverse: false 
+    // reverse false mean animation will only happen once and not repeat if scrolled by again
+})
+.setClassToggle('#tag-line', 'animate') // add class to main
+.addIndicators({
+    name: 'typing scene',
+    colorTrigger: 'red',
 }) // this requires the plugin that is already attached to the html. optional object to customize.
 .addTo(controller);
