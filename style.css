@@ -113,7 +113,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
 }
 
@@ -131,15 +131,31 @@ main {
     color: var(--grey-900);
     font-size: 7rem;
     margin: 0rem 0rem 2rem 0rem;
+
+    border-right: solid .5rem;
+    border-color: var(--main-500);
+    white-space: nowrap;
+    overflow: hidden;   
+
+    animation: animated-text 4s steps(29,end) 1s 1 normal both,
+               animated-cursor 800ms steps(29,end) infinite;
 }
 
-#pairs {
+.pairs {
     font-family: 'VogaW00-Medium';
     color: var(--grey-900);
-    /* letter-spacing: 1rem; */
     font-size: 5.5rem;
 }
 
+@keyframes animated-text{
+    from{width: 0;}
+    to{width: 123vh;}
+}
+  
+@keyframes animated-cursor{
+    from{border-right-color: var(--main-500);}
+    to{border-right-color: transparent;}
+}
 
 
 @keyframes bounce{ 
