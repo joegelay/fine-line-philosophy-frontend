@@ -161,7 +161,7 @@ main {
 #sliding-vertical.fade-in {
     opacity: 1;
     transition-duration: 4s;
-    transition-delay: 4.5s;
+    transition-delay: 4.7s;
 }
 
 #sliding-vertical h2{
@@ -195,7 +195,7 @@ main {
 #read-write.fade-in {
     opacity: 1;
     transition-duration: 4s;
-    transition-delay: 5s;
+    transition-delay: 6s;
 }
 
 .read-write-nav {
@@ -265,7 +265,7 @@ a:hover {
 
 @keyframes animated-text{
     from{width: 0;}
-    to{width: 123vh;}
+    to{width: 125vh;}
 }
   
 @keyframes animated-cursor{
