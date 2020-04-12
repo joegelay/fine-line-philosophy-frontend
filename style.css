@@ -79,6 +79,7 @@ body {
 img {
     width: 50rem;
     height: 2.3rem;
+    outline: 1px solid transparent;
 
     animation-name: fadeIn;
     animation-duration: 2s;
