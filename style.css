@@ -194,7 +194,7 @@ main {
 
 #read-write.fade-in {
     opacity: 1;
-    transition-duration: 4s;
+    transition-duration: 3s;
     transition-delay: 6s;
 }
 
