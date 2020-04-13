@@ -19,7 +19,7 @@
     --main-400: hsl(48, 96%, 71%);
     --main-300: hsl(48, 96%, 80%);
     --main-200: hsl(48, 96%, 88%);
-    --main-100: hsl(48, 96%, 95%);
+    --main-100: hsl(48, 96%, 97%);
 }
 
 * {
@@ -161,26 +161,26 @@ main {
 #sliding-vertical.fade-in {
     opacity: 1;
     transition-duration: 4s;
-    transition-delay: 4.7s;
+    transition-delay: 5s;
 }
 
 #sliding-vertical h2{
-    animation: topToBottom 12.5s linear infinite 0s;
+    animation: topToBottom 10s linear infinite 0s;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 }
 #sliding-vertical h2:nth-child(2){
-	animation-delay: 2.5s;
+	animation-delay: 2s;
 }
 #sliding-vertical h2:nth-child(3){
-	animation-delay: 5s;
+	animation-delay: 4s;
 }
 #sliding-vertical h2:nth-child(4){
-	animation-delay: 7.5s;
+	animation-delay: 6s;
 }
 #sliding-vertical h2:nth-child(5){
-	animation-delay: 10s;
+	animation-delay: 8s;
 }
 
 #read-write {
@@ -195,7 +195,7 @@ main {
 #read-write.fade-in {
     opacity: 1;
     transition-duration: 3s;
-    transition-delay: 6s;
+    transition-delay: 7s;
 }
 
 .read-write-nav {

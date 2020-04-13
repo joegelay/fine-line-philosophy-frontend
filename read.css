@@ -19,7 +19,7 @@
     --main-400: hsl(48, 96%, 71%);
     --main-300: hsl(48, 96%, 80%);
     --main-200: hsl(48, 96%, 88%);
-    --main-100: hsl(48, 96%, 95%);
+    --main-100: hsl(48, 96%, 97%);
 }
 
 * {
@@ -41,7 +41,7 @@ main {
     margin-top: 5rem;
 }
 
-header {
+.select-header {
     margin-bottom: 2.5rem;
     width: 100%;
     display: flex;
@@ -81,7 +81,7 @@ a:hover {
     transform: scale(1.1);
 }
 
-#entries {
+#entries-container {
     display: flex;
     justify-content: space-between;
 }
@@ -93,11 +93,38 @@ a:hover {
 }
 
 .entry-card {
-    width: 600px;
-    height: 400px;
+    width: 90vh;
+    height: 55vh;
     margin-bottom: 1.5rem;
+    padding: 20px;
     box-shadow: 0px 1px 2px 0 var(--grey-900);
     background-color: var(--main-100);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: var(--main-900);
+    font-family: 'VogaW00-Medium';
+}
+
+.entry-card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.entry-card-idea {
+    align-self: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--main-500);
+    margin-bottom: 1rem;
+}
+
+.entry-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    overflow: scroll;
 }
 
 #idea-one-entries {
