@@ -2,11 +2,13 @@ var customSelectBox, i, j, pairOption, optionDiv, b, c;
 
 customSelectBox = document.querySelector(".custom-select")
 pairOption = document.querySelector("#select-pair-form");
+
 /* For each element, create a new DIV that will act as the selected item: */
 optionDiv = document.createElement("DIV");
 optionDiv.setAttribute("class", "select-selected");
 optionDiv.innerHTML = pairOption.options[pairOption.selectedIndex].innerHTML;
 customSelectBox.appendChild(optionDiv);
+
 /* For each element, create a new DIV that will contain the option list: */
 b = document.createElement("DIV");
 b.setAttribute("class", "select-items select-hide");
