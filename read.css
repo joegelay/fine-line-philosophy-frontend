@@ -97,6 +97,7 @@ a:hover {
     height: 55vh;
     margin-bottom: 1.5rem;
     padding: 20px;
+    border: var(--grey-800) solid 1px;
     box-shadow: 0px 1px 2px 0 var(--grey-900);
     background-color: var(--main-100);
     display: flex;
@@ -105,6 +106,10 @@ a:hover {
 
     color: var(--main-900);
     font-family: 'VogaW00-Medium';
+}
+
+.entry-card-two {
+
 }
 
 .entry-card-header {
@@ -165,7 +170,8 @@ a:hover {
     padding: 8px 16px;
     cursor: pointer;
     font-family: 'VogaW00-Medium';
-    font-size: 5.5rem;
+    font-size: 5rem;
+    text-align: center;
   }
   
   /* Style items (options): */
