@@ -63,7 +63,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .select-header {
@@ -168,6 +168,7 @@ a:hover {
 .custom-select {
     position: relative;
     font-family: 'VogaW00-Medium';
+    margin-top: 0rem;
   }
 
   .hide {

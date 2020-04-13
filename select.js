@@ -20,7 +20,6 @@ x = document.querySelector(".custom-select")
         and the selected item: */
         var y, i, k, s, h;
         x.classList.add('hide')
-        console.log(x)
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         h = this.parentNode.previousSibling;
         for (i = 0; i < s.length; i++) {
