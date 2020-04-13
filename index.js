@@ -44,12 +44,20 @@ const navScene = new ScrollMagic.Scene({
 .setClassToggle('#read-write', 'fade-in') 
 .addTo(controller);
 
-// const readScene = new ScrollMagic.Scene({
-//     triggerElement: '#read-page',
-//     duration: '100%',
-//     triggerHook: .8,
-//     // reverse: false 
-//     // reverse false mean animation will only happen once and not repeat if scrolled by again
-// })
-// .setClassToggle('#read-page', 'fade-in') 
-// .addTo(controller);
+fetch('http://localhost:4000/pairs')
+    .then(response => response.json())
+    .then(pairs => renderPairs(pairs))
+
+function renderPairs(pairs) {
+    pairSlider = document.querySelector('#sliding-vertical')
+    pairs.forEach(pair => {
+
+        pairSlide = document.createElement('h2')
+        pairSlide.classList.add("pairs")
+        pairSlide.innerHTML = `${pair.idea_one.name} <span class="yellow">&</span> ${pair.idea_two.name} ?`
+        pairSlider.append(pairSlide)
+    });
+}
+
+
+

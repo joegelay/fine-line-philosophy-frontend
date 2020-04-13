@@ -75,7 +75,6 @@ body {
     animation-timing-function: ease-out;
 }
 
-
 img {
     width: 50rem;
     height: 2.3rem;
@@ -98,7 +97,6 @@ img {
     animation-duration: 2s;
     animation-timing-function: ease-out;
 }
-
 
 #down-arrow {
     margin-top: 7rem;
@@ -303,64 +301,3 @@ a:hover {
         opacity: 1;
     }
 }
-
-/* #read-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    position: relative;
-}
-
-#read-page {
-    opacity: 0;
-    transition: all 2s ease-out;
-}
-
-#read-page.fade-in {
-    opacity: 1;
-}
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #left-arrow {
-    width: 100px;
-
-    animation: bounce-left .5s;
-    animation-direction: alternate; 
-    animation-iteration-count: infinite; 
-} */
-
-/* #right-arrow {
-    width: 80px;
-
-    animation: bounce-right .5s;
-    animation-direction: alternate; 
-    animation-iteration-count: infinite; 
-} */
-
-/* @keyframes bounce-left{ 
-    0% { transform: translate3d(0, 0, 0); opacity: 0;} 
-    100% { transform: translate3d(10px, 0, 0);} 
-} 
-
-@keyframes bounce-right{ 
-    0% { transform: translate3d(10px, 0, 0); opacity: 0;} 
-    100% { transform: translate3d(0px, 0, 0);} 
-}  */
