@@ -64,6 +64,9 @@ function createForm() {
                 }
             }
         h.click();
+
+        clearEntries();
+        
         const pairId = e.target.id
         getIdeas(pairId)
     });
@@ -97,6 +100,22 @@ function createForm() {
     }
     }
     document.addEventListener("click", closeAllSelect);
+}
+
+function clearEntries() {
+    const ideaOneEntries = document.querySelector('#idea-one-entries')
+    let child = ideaOneEntries.lastElementChild
+    while (child) {
+        ideaOneEntries.removeChild(child)
+        child = ideaOneEntries.lastElementChild
+    }
+
+    const ideaTwoEntries = document.querySelector('#idea-two-entries')
+    let childTwo = ideaTwoEntries.lastElementChild
+    while (childTwo) {
+        ideaTwoEntries.removeChild(childTwo)
+        childTwo = ideaTwoEntries.lastElementChild
+    }
 }
 
 function getIdeas(pairId) {
@@ -178,7 +197,3 @@ function renderTwoEntries(entryDetail) {
     `
     entriesContainer.appendChild(entryCard)
 }
-
-
-
-
