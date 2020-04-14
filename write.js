@@ -1,3 +1,5 @@
+const entryForm = document.querySelector('#text-box-submit')
+
 const controller = new ScrollMagic.Controller();
 
 const mainScene = new ScrollMagic.Scene({
@@ -100,3 +102,62 @@ function createForm () {
     }
     document.addEventListener("click", closeAllSelect);
 }
+
+function getIdeas(pairId) {
+    fetch(`http://localhost:4000/pairs/${pairId}`)
+    .then(response => response.json())
+    .then(pair => saveIdeaNamesAndIds(pair))
+}
+
+function saveIdeaNamesAndIds(pair) {
+    const pairId = pair.id 
+    const ideaOneId = pair.idea_one.id
+    const ideaTwoId = pair.idea_two.id
+    const ideaOneName = pair.idea_one.name
+    const ideaTwoName = pair.idea_two.name
+
+    renderFirstPrompt(ideaOneName, ideaOneId)
+}
+
+function renderFirstPrompt(ideaOneName, ideaOneId) {
+    const promptSection = document.querySelector('#prompt')
+    const prompt = document.createElement('h1')
+    prompt.classList.add('pairs')
+    prompt.innerHTML = `What does <span class="yellow-underline">${ideaOneName}</span> mean to you ?`
+    promptSection.appendChild(prompt)
+
+    submitFirstIdea(ideaOneId)
+}
+
+function submitFirstIdea(ideaOneId) {
+     entryForm.addEventListener('submit', event => {
+        event.preventDefault()
+
+        const formData = new FormData(entryForm)
+        const content = formData.get('content')
+
+        const entryData = {
+            content: content,
+            user: 23,
+            idea: ideaOneId
+        }
+       
+        entryForm.reset()
+        submitEntry(entryData)
+    })
+}
+
+function submitEntry(entryData) {
+    const configObject = {
+      method: "POST",
+      headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entryData)
+  }
+
+  console.log(configObject)
+  
+  fetch('http://localhost:4000/entries/', configObject)
+  }

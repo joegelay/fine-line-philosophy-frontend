@@ -71,8 +71,6 @@ function createForm() {
         clearEntries();
         const pairId = e.target.id
         getIdeas(pairId)
-
-
     });
     b.appendChild(c);
     }
