@@ -1,4 +1,4 @@
-const entryForm = document.querySelector('#text-box-submit')
+let entryForm = document.querySelector('#text-box-submit')
 
 const controller = new ScrollMagic.Controller();
 
@@ -140,15 +140,18 @@ function renderSecondPrompt(ideaTwoName, ideaTwoId) {
     prompt.innerHTML = `What does <span class="yellow-underline">${ideaTwoName}</span> mean to you ?`
     promptSection.appendChild(prompt)
 
-    // submitSecondIdea(ideaTwoId)
+    submitSecondIdea(ideaTwoId)
 }
 
 function submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId) {
+    console.log("submit first idea")
      entryForm.addEventListener('submit', event => {
         event.preventDefault()
 
         const formData = new FormData(entryForm)
         const content = formData.get('content')
+
+        console.log(content)
 
         const entryData = {
             content: content,
@@ -157,9 +160,31 @@ function submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId) {
         }
        
         entryForm.reset()
-        renderSecondPrompt(ideaTwoName, ideaTwoId)
         submitEntry(entryData)
-    })
+
+        console.log(entryForm)
+        renderSecondPrompt(ideaTwoName, ideaTwoId)
+    }, {once: true})
+}
+
+function submitSecondIdea(ideaTwoId) {
+    entryForm.addEventListener('submit', event => {
+       event.preventDefault()
+
+       const formData = new FormData(entryForm)
+       const content = formData.get('content')
+
+       console.log(content)
+
+       const entryData = {
+           content: content,
+           user: 23,
+           idea: ideaTwoId
+       }
+      
+       entryForm.reset()
+       submitEntry(entryData)
+   })
 }
 
 function submitEntry(entryData) {
@@ -171,6 +196,5 @@ function submitEntry(entryData) {
       },
       body: JSON.stringify(entryData)
   }
-  
-//   fetch('http://localhost:4000/entries/', configObject)
+    fetch('http://localhost:4000/entries/', configObject)
   }

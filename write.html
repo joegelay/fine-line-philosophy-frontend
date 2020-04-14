@@ -20,7 +20,7 @@
         <a href="../read.html">
             <div id="read-nav">READ</div>
         </a>
-        <a href="../read.html">
+        <a href="#" onclick="document.getElementById('id01').style.display='block'">
             <div id="login-nav">LOGIN</div>
         </a>
     </header>
@@ -43,11 +43,25 @@
                 <button id="submit-button" value="submit">SUBMIT</button>
             </form>
         </section>
-
     </main>
 
+    <!-- Modal Form -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
 
+        <!-- Form Content -->
+        <form class="modal-content animate">
+            <div class="container">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Username" name="username" required>
 
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Password" name="password" required>
+
+                <button type="submit">Login Or Create Account</button>
+            </div>
+        </form>
+    </div>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
