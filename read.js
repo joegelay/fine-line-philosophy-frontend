@@ -16,61 +16,61 @@ fetch('http://localhost:4000/pairs')
 
 function renderPairs(pairs) {
     pairForm = document.querySelector('#select-pair-form')
-    console.log(pairForm)
-    let i = 1
     pairs.forEach(pair => {
-
         pairOption = document.createElement('option')
-        pairOption.value = i
+        pairOption.value = pair.id
         pairOption.innerHTML = `${pair.idea_one.name} & ${pair.idea_two.name}`
         pairForm.append(pairOption)
-        i++
     });
     createForm()
 }
 
 function createForm() {
 
-    var customSelectBox, j, pairOption, optionDiv, b, c;
+    var customSelectBox, j, selectPairList, selectedDisplay, b, c;
 
-    customSelectBox = document.querySelector(".custom-select")
-    pairOption = document.querySelector("#select-pair-form");
+    customSelectBox = document.querySelector(".custom-select");
+    selectPairList = document.querySelector("#select-pair-form");
 
-    optionDiv = document.createElement("DIV");
-    optionDiv.setAttribute("class", "select-selected");
-    optionDiv.innerHTML = pairOption.options[pairOption.selectedIndex].innerHTML;
-    customSelectBox.appendChild(optionDiv);
+    selectedDisplay = document.createElement("DIV");
+    selectedDisplay.setAttribute("class", "select-selected");
+    selectedDisplay.innerHTML = selectPairList.options[selectPairList.selectedIndex].innerHTML;
+    
+    customSelectBox.appendChild(selectedDisplay);
 
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
-    for (j = 1; j < pairOption.length; j++) {
-   
-    c = document.createElement("DIV");
-    c.innerHTML = pairOption.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-       
-        var y, i, k, s, h;
-        customSelectBox.classList.add('hide')
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-            if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-                y[k].removeAttribute("class");
+    for (j = 1; j < selectPairList.length; j++) {
+
+        c = document.createElement("DIV");
+        c.innerHTML = selectPairList.options[j].innerHTML;
+        c.id = selectPairList.options[j].value
+
+        c.addEventListener("click", function(e) {
+            var y, i, k, s, h;
+            customSelectBox.classList.add('hide')
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < s.length; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                for (k = 0; k < y.length; k++) {
+                    y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+                }
             }
-            this.setAttribute("class", "same-as-selected");
-            break;
-            }
-        }
         h.click();
+        const pairId = e.target.id
+        getIdeas(pairId)
     });
     b.appendChild(c);
     }
     customSelectBox.appendChild(b);
-    optionDiv.addEventListener("click", function(e) {
+    selectedDisplay.addEventListener("click", function(e) {
         
         e.stopPropagation();
         closeAllSelect(this);
@@ -98,5 +98,77 @@ function createForm() {
     }
     document.addEventListener("click", closeAllSelect);
 }
+
+function getIdeas(pairId) {
+    fetch(`http://localhost:4000/pairs/${pairId}`)
+    .then(response => response.json())
+    .then(pair => getEntryIds(pair.idea_one_id, pair.idea_two_id))
+}
+
+function getEntryIds(idea_one_id, idea_two_id) {
+    fetch(`http://localhost:4000/ideas/${idea_one_id}`)
+    .then(response => response.json())
+    .then(idea => getOneEntries(idea.entries))
+
+    fetch(`http://localhost:4000/ideas/${idea_two_id}`)
+    .then(response => response.json())
+    .then(idea => getTwoEntries(idea.entries))
+}
+
+function getOneEntries(entries) {
+    entries.forEach(entry => {
+        fetch(`http://localhost:4000/entries/${entry.id}`)
+        .then(response => response.json())
+        .then(entryDetail => renderOneEntries(entryDetail))
+    })
+}
+
+function renderOneEntries(entryDetail) {
+    const entriesContainer = document.querySelector('#idea-one-entries')
+    const entryCard = document.createElement('div')
+    entryCard.className = "entry-card"
+    entryCard.innerHTML = `
+    <header class="entry-card-header">
+        <div>@${entryDetail.user.username}</div>
+        <div>${entryDetail.created_at}</div>
+    </header>
+    <section class="entry-card-idea">
+        ${entryDetail.idea.name}
+    </section>
+    <section class="entry-content">
+            ${entryDetail.content}
+    </section>
+    `
+    entriesContainer.appendChild(entryCard)
+}
+
+function getTwoEntries(entries) {
+    entries.forEach(entry => {
+        fetch(`http://localhost:4000/entries/${entry.id}`)
+        .then(response => response.json())
+        .then(entryDetail => renderTwoEntries(entryDetail))
+    })
+}
+
+function renderTwoEntries(entryDetail) {
+    const entriesContainer = document.querySelector('#idea-two-entries')
+    const entryCard = document.createElement('div')
+    entryCard.className = "entry-card"
+    entryCard.innerHTML = `
+    <header class="entry-card-header">
+        <div>@${entryDetail.user.username}</div>
+        <div>${entryDetail.created_at}</div>
+    </header>
+    <section class="entry-card-idea">
+        ${entryDetail.idea.name}
+    </section>
+    <section class="entry-content">
+            ${entryDetail.content}
+    </section>
+    `
+    entriesContainer.appendChild(entryCard)
+}
+
+
 
 
