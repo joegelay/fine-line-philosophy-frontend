@@ -118,7 +118,7 @@ a:hover {
 
 #prompt-and-box {
     opacity: 0;
-    transition: all 3s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 #prompt-and-box.appear {
@@ -129,6 +129,31 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#first-prompt {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+#first-prompt.fade-out {
+    opacity: 0;
+}
+
+#second-prompt {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 #text-box {

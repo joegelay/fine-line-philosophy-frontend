@@ -144,24 +144,28 @@ function submitIdea(ideaId1, ideaName2, ideaId2) {
       
        entryForm.reset()
        submitEntry(entryData)
+       const firstPrompt = document.querySelector('#first-prompt')
+       firstPrompt.classList.add('fade-out')
 
        renderSecondPrompt(ideaName2, ideaId2)
    }, {once: true})
 }
 
 function renderSecondPrompt(ideaName2, ideaId2) {
+    setTimeout(function() {
     const promptSection = document.querySelector('#prompt')
 
     const firstPrompt = document.querySelector('#first-prompt')
     firstPrompt.remove()
 
     const prompt = document.createElement('h1')
+    prompt.id = "second-prompt"
     prompt.classList.add('pairs')
     prompt.innerHTML = `What does <span class="yellow-underline">${ideaName2}</span> mean to you ?`
     promptSection.appendChild(prompt)
 
     submitSecondIdea(ideaId2)
-}
+}, 1500)}
 
 function submitSecondIdea(ideaId2) {
     entryForm.addEventListener('submit', event => {
