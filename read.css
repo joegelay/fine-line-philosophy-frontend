@@ -105,7 +105,15 @@ a:hover {
 #entries-container {
     display: flex;
     justify-content: space-between;
+
+    opacity: 0;
+    transition: all 1.25s ease-in;
 }
+
+#entries-container.fade-in {
+    opacity: 1;
+}
+
 
 #idea-one-entries {
     display: flex;
@@ -159,14 +167,15 @@ a:hover {
 .custom-select {
     position: relative;
     font-family: 'VogaW00-Medium';
-  }
-  
-  .custom-select select {
-    display: none; /*hide original SELECT element: */
-  }
-  
-   /* this is what appears on the page */
-  .select-selected {
+}
+
+.custom-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+/* this is what appears on the page */
+.select-selected {
     background-color: var(--grey-100);
     width: auto;
     font-family: 'VogaW00-Medium';
@@ -174,45 +183,43 @@ a:hover {
     text-decoration: underline var(--main-500);
     display: flex;
     justify-content: center;
-  }
+}
 
-  .select-selected:hover {
+.select-selected:hover {
     transform: scale(1.05);
-  }
+}
 
-  
-  /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
     color: var(--grey-900);
     padding: 8px 16px;
     cursor: pointer;
     font-family: 'VogaW00-Medium';
     font-size: 5rem;
     text-align: center;
-  }
-  
-  /* Style items (options): */
-  .select-items {
+}
+
+/* Style items (options): */
+.select-items {
     position: absolute;
     background-color: var(--grey-100);
     top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
-  }
-  
-  .select-hide {
-    display: none;
-  }
-  
-  .select-items div:hover, .same-as-selected {
-    background-color: var(--main-300);
-  }
-
-  .yellow {
-    color: var(--main-500);
 }
 
+.select-hide {
+    display: none;
+}
 
+.select-items div:hover,
+.same-as-selected {
+    background-color: var(--main-300);
+}
 
-
+.yellow {
+    color: var(--main-500);
+}

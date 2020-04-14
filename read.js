@@ -65,10 +65,14 @@ function createForm() {
             }
         h.click();
 
+        const entriesContainer = document.querySelector("#entries-container");
+        entriesContainer.classList.add('fade-in')
+
         clearEntries();
-        
         const pairId = e.target.id
         getIdeas(pairId)
+
+
     });
     b.appendChild(c);
     }
@@ -160,7 +164,7 @@ function renderOneEntries(entryDetail) {
         ${entryDetail.idea.name}
     </section>
     <section class="entry-content">
-            ${entryDetail.content}
+        ${entryDetail.content}
     </section>
     `
     entriesContainer.appendChild(entryCard)
