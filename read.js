@@ -126,11 +126,16 @@ function getOneEntries(entries) {
 function renderOneEntries(entryDetail) {
     const entriesContainer = document.querySelector('#idea-one-entries')
     const entryCard = document.createElement('div')
+
+    const datetime = entryDetail.created_at
+    const parts = datetime.split(/[-T]/)
+    const date = `${parts[1]}/${parts[2]}/${parts[0]}`
+
     entryCard.className = "entry-card"
     entryCard.innerHTML = `
     <header class="entry-card-header">
         <div>@${entryDetail.user.username}</div>
-        <div>${entryDetail.created_at}</div>
+        <div>${date}</div>
     </header>
     <section class="entry-card-idea">
         ${entryDetail.idea.name}
@@ -153,11 +158,16 @@ function getTwoEntries(entries) {
 function renderTwoEntries(entryDetail) {
     const entriesContainer = document.querySelector('#idea-two-entries')
     const entryCard = document.createElement('div')
+
+    const datetime = entryDetail.created_at
+    const parts = datetime.split(/[-T]/)
+    const date = `${parts[1]}/${parts[2]}/${parts[0]}`
+
     entryCard.className = "entry-card"
     entryCard.innerHTML = `
     <header class="entry-card-header">
         <div>@${entryDetail.user.username}</div>
-        <div>${entryDetail.created_at}</div>
+        <div>${date}</div>
     </header>
     <section class="entry-card-idea">
         ${entryDetail.idea.name}
