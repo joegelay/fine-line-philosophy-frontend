@@ -116,20 +116,34 @@ function saveIdeaNamesAndIds(pair) {
     const ideaOneName = pair.idea_one.name
     const ideaTwoName = pair.idea_two.name
 
-    renderFirstPrompt(ideaOneName, ideaOneId)
+    renderFirstPrompt(ideaOneName, ideaOneId, ideaTwoName, ideaTwoId)
 }
 
-function renderFirstPrompt(ideaOneName, ideaOneId) {
+function renderFirstPrompt(ideaOneName, ideaOneId, ideaTwoName, ideaTwoId) {
     const promptSection = document.querySelector('#prompt')
     const prompt = document.createElement('h1')
     prompt.classList.add('pairs')
+    prompt.id = "first-prompt"
     prompt.innerHTML = `What does <span class="yellow-underline">${ideaOneName}</span> mean to you ?`
     promptSection.appendChild(prompt)
 
-    submitFirstIdea(ideaOneId)
+    submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId)
 }
 
-function submitFirstIdea(ideaOneId) {
+function renderSecondPrompt(ideaTwoName, ideaTwoId) {
+    const promptSection = document.querySelector('#prompt')
+    const firstPrompt =  document.querySelector('#first-prompt')
+    firstPrompt.remove()
+
+    const prompt = document.createElement('h1')
+    prompt.classList.add('pairs')
+    prompt.innerHTML = `What does <span class="yellow-underline">${ideaTwoName}</span> mean to you ?`
+    promptSection.appendChild(prompt)
+
+    // submitSecondIdea(ideaTwoId)
+}
+
+function submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId) {
      entryForm.addEventListener('submit', event => {
         event.preventDefault()
 
@@ -143,6 +157,7 @@ function submitFirstIdea(ideaOneId) {
         }
        
         entryForm.reset()
+        renderSecondPrompt(ideaTwoName, ideaTwoId)
         submitEntry(entryData)
     })
 }
@@ -156,8 +171,6 @@ function submitEntry(entryData) {
       },
       body: JSON.stringify(entryData)
   }
-
-  console.log(configObject)
   
-  fetch('http://localhost:4000/entries/', configObject)
+//   fetch('http://localhost:4000/entries/', configObject)
   }
