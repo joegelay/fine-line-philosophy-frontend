@@ -110,7 +110,6 @@ function getIdeas(pairId) {
 }
 
 function saveIdeaNamesAndIds(pair) {
-    const pairId = pair.id 
     const ideaId1 = pair.idea_one.id
     const ideaId2 = pair.idea_two.id
     const ideaName1 = pair.idea_one.name

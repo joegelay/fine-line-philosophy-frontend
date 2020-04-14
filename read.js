@@ -81,6 +81,7 @@ function createForm() {
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
+        
     });
 
     function closeAllSelect(elmnt) {
@@ -102,6 +103,11 @@ function createForm() {
     }
     }
     document.addEventListener("click", closeAllSelect);
+    formHeader = document.querySelector('.select-selected')
+    formHeader.addEventListener('click', event => {
+        const entriesContainer = document.querySelector("#entries-container");
+        entriesContainer.classList.remove('fade-in')
+    })
 }
 
 function clearEntries() {

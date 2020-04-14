@@ -107,7 +107,7 @@ a:hover {
     justify-content: space-between;
 
     opacity: 0;
-    transition: all 1.25s ease-in;
+    transition: all 1s ease-in;
 }
 
 #entries-container.fade-in {
@@ -121,8 +121,8 @@ a:hover {
 }
 
 .entry-card {
-    width: 90vh;
-    height: 55vh;
+    width: 88vh;
+    height: 50vh;
     margin-bottom: 1.5rem;
     padding: 20px;
     border: var(--grey-800) solid 1px;
