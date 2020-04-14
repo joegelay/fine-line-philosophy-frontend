@@ -165,7 +165,7 @@ function renderSecondPrompt(ideaName2, ideaId2) {
     promptSection.appendChild(prompt)
 
     submitSecondIdea(ideaId2)
-}, 1500)}
+}, 1000)}
 
 function submitSecondIdea(ideaId2) {
     entryForm.addEventListener('submit', event => {
@@ -200,8 +200,11 @@ function submitEntry(entryData) {
 
   function endScreen(){
     const promptAndForm = document.querySelector('#prompt-and-box')
-    promptAndForm.remove()
+    promptAndForm.classList.add('fade-out')
 
-    const endScreen = document.querySelector('#end-screen')
-    endScreen.classList.add('visible')
+    setTimeout(function() {
+        promptAndForm.remove()
+        const endScreen = document.querySelector('#end-screen')
+        endScreen.classList.add('visible')
+    }, 1800)
   }

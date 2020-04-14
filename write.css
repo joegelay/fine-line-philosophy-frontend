@@ -123,6 +123,18 @@ a:hover {
 
 #prompt-and-box.appear {
     opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+#prompt-and-box {
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+#prompt-and-box.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
 }
 
 #text-box-submit {
@@ -133,7 +145,7 @@ a:hover {
 
 #first-prompt {
     opacity: 1;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 #first-prompt.fade-out {
@@ -142,7 +154,7 @@ a:hover {
 
 #second-prompt {
     animation-name: fadeIn;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-timing-function: ease-in-out;
 }
 
@@ -155,6 +167,22 @@ a:hover {
         opacity: 1;
     }
 }
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 
 #text-box {
     width: 110vh;
@@ -201,7 +229,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15%;
+    margin: 10%;
 }
 
 #submit-message {
