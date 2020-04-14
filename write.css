@@ -116,6 +116,15 @@ a:hover {
     transform: scale(1.1);
 }
 
+#prompt-and-box {
+    opacity: 0;
+    transition: all 3s ease-in-out;
+}
+
+#prompt-and-box.appear {
+    opacity: 1;
+}
+
 #text-box-submit {
     display: flex;
     flex-direction: column;
@@ -137,7 +146,6 @@ a:hover {
     color: var(--main-900);
     font-family: 'Montserrat';
     font-size: 1.5rem;
-   
 }
 
 #submit-button {

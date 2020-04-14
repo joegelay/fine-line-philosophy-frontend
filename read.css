@@ -114,7 +114,6 @@ a:hover {
     opacity: 1;
 }
 
-
 #idea-one-entries {
     display: flex;
     flex-direction: column;
@@ -188,7 +187,6 @@ a:hover {
 .select-selected:hover {
     transform: scale(1.05);
 }
-
 
 /* style the items (options), including the selected item: */
 .select-items div,

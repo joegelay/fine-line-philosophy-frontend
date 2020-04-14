@@ -247,7 +247,7 @@ a:hover {
 
 @keyframes animated-text{
     from{width: 0;}
-    to{width: 125vh;}
+    to{width: 128vh;}
 }
   
 @keyframes animated-cursor{
