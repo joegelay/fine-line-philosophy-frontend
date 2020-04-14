@@ -111,79 +111,75 @@ function getIdeas(pairId) {
 
 function saveIdeaNamesAndIds(pair) {
     const pairId = pair.id 
-    const ideaOneId = pair.idea_one.id
-    const ideaTwoId = pair.idea_two.id
-    const ideaOneName = pair.idea_one.name
-    const ideaTwoName = pair.idea_two.name
+    const ideaId1 = pair.idea_one.id
+    const ideaId2 = pair.idea_two.id
+    const ideaName1 = pair.idea_one.name
+    const ideaName2 = pair.idea_two.name
 
-    renderFirstPrompt(ideaOneName, ideaOneId, ideaTwoName, ideaTwoId)
+    renderPrompt(ideaName1, ideaId1, ideaName2, ideaId2)
 }
 
-function renderFirstPrompt(ideaOneName, ideaOneId, ideaTwoName, ideaTwoId) {
+function renderPrompt(ideaName1, ideaId1, ideaName2, ideaId2) {
     const promptSection = document.querySelector('#prompt')
     const prompt = document.createElement('h1')
     prompt.classList.add('pairs')
     prompt.id = "first-prompt"
-    prompt.innerHTML = `What does <span class="yellow-underline">${ideaOneName}</span> mean to you ?`
+    prompt.innerHTML = `What does <span class="yellow-underline">${ideaName1}</span> mean to you ?`
     promptSection.appendChild(prompt)
 
-    submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId)
+    submitIdea(ideaId1, ideaName2, ideaId2)
 }
 
-function renderSecondPrompt(ideaTwoName, ideaTwoId) {
-    const promptSection = document.querySelector('#prompt')
-    const firstPrompt =  document.querySelector('#first-prompt')
-    firstPrompt.remove()
-
-    const prompt = document.createElement('h1')
-    prompt.classList.add('pairs')
-    prompt.innerHTML = `What does <span class="yellow-underline">${ideaTwoName}</span> mean to you ?`
-    promptSection.appendChild(prompt)
-
-    submitSecondIdea(ideaTwoId)
-}
-
-function submitFirstIdea(ideaOneId, ideaTwoName, ideaTwoId) {
-    console.log("submit first idea")
-     entryForm.addEventListener('submit', event => {
-        event.preventDefault()
-
-        const formData = new FormData(entryForm)
-        const content = formData.get('content')
-
-        console.log(content)
-
-        const entryData = {
-            content: content,
-            user: 23,
-            idea: ideaOneId
-        }
-       
-        entryForm.reset()
-        submitEntry(entryData)
-
-        console.log(entryForm)
-        renderSecondPrompt(ideaTwoName, ideaTwoId)
-    }, {once: true})
-}
-
-function submitSecondIdea(ideaTwoId) {
+function submitIdea(ideaId1, ideaName2, ideaId2) {
     entryForm.addEventListener('submit', event => {
        event.preventDefault()
 
        const formData = new FormData(entryForm)
        const content = formData.get('content')
 
-       console.log(content)
-
        const entryData = {
            content: content,
-           user: 23,
-           idea: ideaTwoId
+           user: 25,
+           idea: ideaId1
        }
       
        entryForm.reset()
        submitEntry(entryData)
+
+       renderSecondPrompt(ideaName2, ideaId2)
+   }, {once: true})
+}
+
+function renderSecondPrompt(ideaName2, ideaId2) {
+    const promptSection = document.querySelector('#prompt')
+
+    const firstPrompt = document.querySelector('#first-prompt')
+    firstPrompt.remove()
+
+    const prompt = document.createElement('h1')
+    prompt.classList.add('pairs')
+    prompt.innerHTML = `What does <span class="yellow-underline">${ideaName2}</span> mean to you ?`
+    promptSection.appendChild(prompt)
+
+    submitSecondIdea(ideaId2)
+}
+
+function submitSecondIdea(ideaId2) {
+    entryForm.addEventListener('submit', event => {
+       event.preventDefault()
+
+       const formData = new FormData(entryForm)
+       const content = formData.get('content')
+
+       const entryData = {
+           content: content,
+           user: 25,
+           idea: ideaId2
+       }
+      
+       entryForm.reset()
+       submitEntry(entryData)
+       endScreen()
    })
 }
 
@@ -197,4 +193,12 @@ function submitEntry(entryData) {
       body: JSON.stringify(entryData)
   }
     fetch('http://localhost:4000/entries/', configObject)
+  }
+
+  function endScreen(){
+    const promptAndForm = document.querySelector('#prompt-and-box')
+    promptAndForm.remove()
+
+    const endScreen = document.querySelector('#end-screen')
+    endScreen.classList.add('visible')
   }

@@ -103,8 +103,8 @@ img {
     height: 2.5rem;
 
     animation: bounce .5s;
-    animation-direction: alternate; 
-    animation-iteration-count: infinite; 
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 main {
@@ -136,14 +136,14 @@ main {
     font-size: 7rem;
     margin: -350px 0rem 2rem 0rem;
     visibility: visible;
-   
+
     border-right: solid .5rem;
     border-color: var(--main-500);
     white-space: nowrap;
-    overflow: hidden;   
+    overflow: hidden;
 
-    animation: animated-text 4s steps(29,end) .3s 1 normal both,
-               animated-cursor 800ms steps(29,end) infinite;
+    animation: animated-text 4s steps(29, end) .3s 1 normal both,
+        animated-cursor 800ms steps(29, end) infinite;
 }
 
 .pairs {
@@ -162,23 +162,27 @@ main {
     transition-delay: 5s;
 }
 
-#sliding-vertical h2{
+#sliding-vertical h2 {
     animation: topToBottom 10s linear infinite 0s;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
 }
-#sliding-vertical h2:nth-child(2){
-	animation-delay: 2s;
+
+#sliding-vertical h2:nth-child(2) {
+    animation-delay: 2s;
 }
-#sliding-vertical h2:nth-child(3){
-	animation-delay: 4s;
+
+#sliding-vertical h2:nth-child(3) {
+    animation-delay: 4s;
 }
-#sliding-vertical h2:nth-child(4){
-	animation-delay: 6s;
+
+#sliding-vertical h2:nth-child(4) {
+    animation-delay: 6s;
 }
-#sliding-vertical h2:nth-child(5){
-	animation-delay: 8s;
+
+#sliding-vertical h2:nth-child(5) {
+    animation-delay: 8s;
 }
 
 #read-write {
@@ -235,30 +239,70 @@ a:hover {
 }
 
 
-@keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; transform: translateY(-50px); }
-	10% { opacity: 1; transform: translateY(0px); }
-	25% { opacity: 1; transform: translateY(0px); }
-	30% { opacity: 0; transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
+@keyframes topToBottom {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    30% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
-@keyframes animated-text{
-    from{width: 0;}
-    to{width: 128vh;}
-}
-  
-@keyframes animated-cursor{
-    from{border-right-color: var(--main-500);}
-    to{border-right-color: transparent;}
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 126vh;
+    }
 }
 
-@keyframes bounce{ 
-    0% { transform: translate3d(0, 0, 0); opacity: 0;} 
-    100% { transform: translate3d(0, 10px, 0);} 
-} 
+@keyframes animated-cursor {
+    from {
+        border-right-color: var(--main-500);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 10px, 0);
+    }
+}
 
 @keyframes moveInLeft {
     0% {

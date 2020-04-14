@@ -168,6 +168,32 @@ a:hover {
     cursor: pointer;
 }
 
+#end-screen {
+    display: none;
+}
+
+#end-screen.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15%;
+}
+
+#submit-message {
+    margin-bottom: 10%;
+}
+
+#read-entries {
+    font-family: 'VogaW00-Medium';
+    font-size: 3.5rem;
+    color: var(--grey-900);
+}
+
+#read-entries:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 /* Select box */
 .custom-select {
     position: relative;
