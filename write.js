@@ -208,3 +208,54 @@ function submitEntry(entryData) {
         endScreen.classList.add('visible')
     }, 1800)
   }
+
+  // login form handling 
+
+  const loginForm = document.querySelector('#login-form')
+  loginForm.addEventListener('submit', handleLogin)
+  
+  function handleLogin(event) {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    const username = formData.get('username')
+    const email = formData.get('email')
+    const password = formData.get('password')
+
+    const loginData = {
+            username: username, 
+            email: email, 
+            password: password
+    }
+
+    const configObject = {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginData)
+    }
+      fetch('http://localhost:4000/login', configObject)
+      .then(response => response.json())
+      .then(result => {
+          console.log(result.token)
+          localStorage.setItem("token", result.token)
+      })
+
+    event.target.reset();
+  }
+
+  const getUsers = document.querySelector('#get-users')
+  getUsers.addEventListener('click', handleGetUsers)
+
+  function handleGetUsers() {
+    fetch('http://localhost:4000/users', {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${ localStorage.getItem("token")}`
+        }
+    })
+    .then(response => response.json())
+    .then(console.log)
+  }
