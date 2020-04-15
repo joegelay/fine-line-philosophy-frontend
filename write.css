@@ -361,11 +361,16 @@ a:hover {
 
 .modal-form-input {
     height: 35px;
-    width: 240px;
+    width: 200px;
+    padding: 0px 0px 0px 4px;
 }
 
 #modal-submit {
     background-color: rgba(0, 0, 0, 0);
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* The Close Button */
