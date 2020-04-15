@@ -40,7 +40,7 @@
 
             <form id="text-box-submit">
                 <textarea id="text-box" name="content" placeholder="Share your thoughts here..."></textarea>
-                <button id="submit-button" value="submit">SUBMIT</button>
+                <button class="submit-button" value="submit">SUBMIT</button>
             </form>
         </section>
 
@@ -60,14 +60,15 @@
 
         <!-- Form Content -->
         <form class="modal-content animate">
-            <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" required>
+            <div id="modal-form-content" class="container">
+                <div class="form-section">
+                    <input class="modal-form-input" type="text" placeholder="Username" name="username" required>
+                </div>
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" required>
-
-                <button type="submit">Login Or Create Account</button>
+                <div class="form-section">
+                    <input class="modal-form-input" type="password" placeholder="Password" name="password" required>
+                </div>
+                <button class="submit-button" id="modal-submit" type="submit">LOGIN / CREATE ACCOUNT</button>
             </div>
         </form>
     </div>

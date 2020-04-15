@@ -138,7 +138,7 @@ function submitIdea(ideaId1, ideaName2, ideaId2) {
 
        const entryData = {
            content: content,
-           user: 25,
+           user: 27,
            idea: ideaId1
        }
       
@@ -176,7 +176,7 @@ function submitSecondIdea(ideaId2) {
 
        const entryData = {
            content: content,
-           user: 25,
+           user: 27,
            idea: ideaId2
        }
       

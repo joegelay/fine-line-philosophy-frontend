@@ -201,7 +201,7 @@ a:hover {
     font-size: 1.5rem;
 }
 
-#submit-button {
+.submit-button {
     width: auto;
     padding: .5rem 2rem;
     margin: .5rem 0;
@@ -216,7 +216,7 @@ a:hover {
     font-size: 2rem;
 }
 
-#submit-button:hover {
+.submit-button:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -313,8 +313,6 @@ a:hover {
     color: var(--main-500);
 }
 
-
-
 /* The Modal (background) */
 .modal {
     display: none;
@@ -340,12 +338,34 @@ a:hover {
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--main-100);
     margin: 5px auto;
     /* 15% from the top and centered */
     border: 1px solid #888;
-    width: 80%;
+    width: 30%;
+    height: 30%;
     /* Could be more or less, depending on screen size */
+}
+
+#modal-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.form-section {
+    /* margin: 10%; */
+}
+
+.modal-form-input {
+    height: 35px;
+    width: 240px;
+}
+
+#modal-submit {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* The Close Button */
