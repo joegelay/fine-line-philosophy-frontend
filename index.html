@@ -27,11 +27,19 @@
         <h1 id="tag-line">What's the line between .<span class="yellow">.</span>.</h1>
         <div id="sliding-vertical">
         </div>
-        <nav id="read-write">
-            <a id="read" href="#main" onclick="document.getElementById('id01').style.display='block'">
+        <nav class="read-write" id="read-write">
+            <a class="read" href="/read.html">
+                <span class="read-write-nav">READ</span>
+            </a>
+            <a class="write" href="/write.html">
+                <span class="read-write-nav">WRITE</span>
+            </a>
+        </nav>
+        <nav class="read-write" id="login-signup">
+            <a class="read" href="#main" onclick="document.getElementById('id01').style.display='block'">
                 <span class="read-write-nav">LOG IN</span>
             </a>
-            <a id="write" href="#main" onclick="document.getElementById('id02').style.display='block'">
+            <a class="write" href="#main" onclick="document.getElementById('id02').style.display='block'">
                 <span class="read-write-nav">SIGN UP</span>
             </a>
         </nav>
@@ -76,7 +84,7 @@
                 <div class="form-section">
                     <input class="modal-form-input" type="password" placeholder="Password" name="password" required>
                 </div>
-                <button class="submit-button" id="modal-submit" type="submit">SIGN UP</button>
+                <button class="submit-button" id="modal-submit-two" type="submit">SIGN UP</button>
             </div>
         </form>
     </div>

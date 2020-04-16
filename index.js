@@ -41,7 +41,7 @@ const navScene = new ScrollMagic.Scene({
     triggerHook: .8,
     // reverse: false 
 })
-.setClassToggle('#read-write', 'fade-in') 
+.setClassToggle('.read-write', 'fade-in') 
 .addTo(controller);
 
 fetch('http://localhost:4000/pairs')
@@ -58,6 +58,46 @@ function renderPairs(pairs) {
         pairSlider.append(pairSlide)
     });
 }
+
+// check if token exists
+const token = localStorage.getItem("token")
+const readWriteButtons = document.querySelector('#read-write')
+const loginButtons = document.querySelector('#login-signup')
+if (!token) {
+    hideReadWrite()
+    showLoginSignup()
+} else {
+    showReadWrite()
+    hideLoginSignup()
+}
+
+function hideReadWrite() {
+    if (!readWriteButtons.classList.contains('hide')) {
+        readWriteButtons.classList.add('hide')
+    }
+}
+
+function showReadWrite() {
+    if (readWriteButtons.classList.contains('hide')) {
+        readWriteButtons.classList.remove('hide')
+    }
+}
+
+function hideLoginSignup() {
+    if (!loginButtons.classList.contains('hide')) {
+        loginButtons.classList.add('hide')
+    }
+}
+
+function showLoginSignup() {
+    if (loginButtons.classList.contains('hide')) {
+        loginButtons.classList.remove('hide')
+    }
+}
+
+
+
+
 
 const loginForm = document.querySelector('#login-form')
   loginForm.addEventListener('submit', handleLogin)

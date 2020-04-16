@@ -185,7 +185,7 @@ main {
     animation-delay: 8s;
 }
 
-#read-write {
+.read-write {
     opacity: 0;
     position: absolute;
     margin-top: 17rem;
@@ -194,10 +194,18 @@ main {
     justify-content: center;
 }
 
-#read-write.fade-in {
+.read-write.fade-in {
     opacity: 1;
     transition-duration: 3s;
     transition-delay: 7s;
+}
+
+#read-write.hide {
+    display: none;
+}
+
+#login-signup.hide {
+    display: none
 }
 
 .read-write-nav {
@@ -208,13 +216,13 @@ main {
     margin-bottom: 10rem;
 }
 
-#read {
+.read {
     display: flex;
     align-items: baseline;
     margin-left: 1rem;
 }
 
-#write {
+.write {
     display: flex;
     align-items: baseline;
     margin-left: 5rem;
@@ -405,6 +413,14 @@ a:hover {
 }
 
 #modal-submit {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#modal-submit-two {
     background-color: rgba(0, 0, 0, 0);
     margin-top: 0px;
     margin-bottom: 8px;
