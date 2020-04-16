@@ -63,7 +63,7 @@ function renderPairs(pairs) {
 const token = localStorage.getItem("token")
 const readWriteButtons = document.querySelector('#read-write')
 const loginButtons = document.querySelector('#login-signup')
-if (!token) {
+if (!token || token === "undefined") {
     hideReadWrite()
     showLoginSignup()
 } else {
