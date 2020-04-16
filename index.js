@@ -130,7 +130,6 @@ const loginForm = document.querySelector('#login-form')
     event.target.reset();
   }
 
-
   const signUpForm = document.querySelector('#sign-up-form')
   signUpForm.addEventListener('submit', handleSignUp)
   
@@ -166,5 +165,8 @@ const loginForm = document.querySelector('#login-form')
       .then(result => console.log(result))
 
     event.target.reset();
+
+    const modal = document.getElementById('id02')
+    modal.style.display = 'none'
   }
 
