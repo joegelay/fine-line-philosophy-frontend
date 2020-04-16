@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Fine Line Philosophy</title>
 </head>
+
 <body id="fullpage">
 
     <section id="landing">
         <h1 id="logo-one">FINE L<span class="yellow">I</span>NE</h1>
         <img src="/images/logo-divider.png" alt="">
         <h2 id="logo-two">PH<span class="yellow">I</span>LOSOPHY</h2>
-        
+
         <a href="#main">
             <img id="down-arrow" class="bounce" src="/images/down-arrow.svg" alt="" srcset="">
         </a>
@@ -25,17 +28,62 @@
         <div id="sliding-vertical">
         </div>
         <nav id="read-write">
-            <a id="read" href="/read.html">
-                <span class="read-write-nav">READ</span>
+            <a id="read" href="#main" onclick="document.getElementById('id01').style.display='block'">
+                <span class="read-write-nav">LOG IN</span>
             </a>
-            <a id="write" href="/write.html">
-                <span class="read-write-nav">WRITE</span>
+            <a id="write" href="#main" onclick="document.getElementById('id02').style.display='block'">
+                <span class="read-write-nav">SIGN UP</span>
             </a>
         </nav>
     </main>
-    
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+
+        <!-- Login Form Content -->
+        <form id="login-form" class="modal-content animate">
+            <div id="modal-form-content" class="container">
+                <div class="form-section">
+                    <input class="modal-form-input" type="text" placeholder="Username" name="username" required>
+                </div>
+
+                <div class="form-section">
+                    <input class="modal-form-input" type="text" placeholder="Email" name="email" required>
+                </div>
+
+                <div class="form-section">
+                    <input class="modal-form-input" type="password" placeholder="Password" name="password" required>
+                </div>
+                <button class="submit-button" id="modal-submit" type="submit">LOG IN</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close">&times;</span>
+
+        <!-- Login Form Content -->
+        <form id="sign-up-form" class="modal-content animate">
+            <div id="modal-form-content" class="container">
+                <div class="form-section">
+                    <input class="modal-form-input" type="text" placeholder="Username" name="username" required>
+                </div>
+
+                <div class="form-section">
+                    <input class="modal-form-input" type="text" placeholder="Email" name="email" required>
+                </div>
+
+                <div class="form-section">
+                    <input class="modal-form-input" type="password" placeholder="Password" name="password" required>
+                </div>
+                <button class="submit-button" id="modal-submit" type="submit">SIGN UP</button>
+            </div>
+        </form>
+    </div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>

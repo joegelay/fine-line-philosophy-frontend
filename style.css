@@ -345,3 +345,110 @@ a:hover {
         opacity: 1;
     }
 }
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--main-100);
+    margin: 5px auto;
+    border: 1px solid #888;
+    width: 30%;
+    height: 30%;
+}
+
+#modal-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-form-input {
+    height: 35px;
+    width: 200px;
+    padding: 0px 0px 0px 4px;
+}
+
+.submit-button {
+    width: auto;
+    padding: .5rem 2rem;
+    margin: .5rem 0;
+    outline: none;
+    border: none;
+    background-color: var(--grey-100);
+
+    color: var(--main-900);
+    font-family: 'VogaW00-Medium';
+    text-decoration: underline;
+    text-decoration-color: var(--main-500);
+    font-size: 2rem;
+}
+
+.submit-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#modal-submit {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--main-500);
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
