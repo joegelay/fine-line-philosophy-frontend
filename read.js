@@ -143,14 +143,11 @@ function getEntryIds(idea_one_id, idea_two_id) {
 }
 
 function getOneEntries(entries) {
-    entries.forEach(entry => {
-        fetch(`http://localhost:4000/entries/${entry.id}`)
-        .then(response => response.json())
-        .then(entryDetail => renderOneEntries(entryDetail))
-    })
+    entries.sort((a, b) => b.id - a.id).forEach(renderOneEntries)
 }
 
 function renderOneEntries(entryDetail) {
+    console.log(entryDetail)
     const entriesContainer = document.querySelector('#idea-one-entries')
     const entryCard = document.createElement('div')
 
@@ -175,11 +172,7 @@ function renderOneEntries(entryDetail) {
 }
 
 function getTwoEntries(entries) {
-    entries.forEach(entry => {
-        fetch(`http://localhost:4000/entries/${entry.id}`)
-        .then(response => response.json())
-        .then(entryDetail => renderTwoEntries(entryDetail))
-    })
+    entries.sort((a, b) => b.id - a.id).forEach(renderTwoEntries)
 }
 
 function renderTwoEntries(entryDetail) {
