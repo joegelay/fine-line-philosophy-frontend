@@ -205,3 +205,9 @@ function renderTwoEntries(entryDetail) {
     `
     entriesContainer.appendChild(entryCard)
 }
+
+  // logout handling 
+  const logOutButton = document.querySelector('#logout-nav')
+  logOutButton.addEventListener('click', event => {
+    localStorage.removeItem("token")
+  })

@@ -50,6 +50,11 @@ body {
 
 #write-nav {
     color: var(--grey-800);
+    margin-right: 2rem;
+}
+
+#logout-nav {
+    color: var(--grey-800);
     margin-right: 4.5rem;
 }
 
