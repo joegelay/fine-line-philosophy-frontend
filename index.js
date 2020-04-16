@@ -100,7 +100,6 @@ const loginForm = document.querySelector('#login-form')
   loginForm.addEventListener('submit', handleLogin)
   
   function handleLogin(event) {
-    console.log(event)
     event.preventDefault()
 
     const formData = new FormData(event.target)
@@ -122,27 +121,30 @@ const loginForm = document.querySelector('#login-form')
     }
       fetch('http://localhost:4000/login', configObject)
       .then(response => response.json())
-      .then(result => {
-          console.log(result.token)
-          localStorage.setItem("token", result.token)
-      })
-
+      .then(result => chooseResultPath(result))
+    
     event.target.reset();
+  }
+
+  function chooseResultPath(result) {
+      if (result["token"]) {
+          localStorage.setItem("token", result.token)
+          location.reload();
+      } else {
+        alert(result["message"])
+      }
   }
 
   const signUpForm = document.querySelector('#sign-up-form')
   signUpForm.addEventListener('submit', handleSignUp)
   
   function handleSignUp(event) {
-    console.log(event)
     event.preventDefault()
 
     const formData = new FormData(event.target)
     const username = formData.get('username')
     const email = formData.get('email')
     const password = formData.get('password')
-
-    console.log(password)
 
     const signUpData = {
         user: {
@@ -162,7 +164,6 @@ const loginForm = document.querySelector('#login-form')
     }
       fetch('http://localhost:4000/users', configObject)
       .then(response => response.json())
-      .then(result => console.log(result))
 
     event.target.reset();
 
