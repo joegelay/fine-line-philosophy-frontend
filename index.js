@@ -96,23 +96,19 @@ function showLoginSignup() {
 }
 
 
-
-
-
 const loginForm = document.querySelector('#login-form')
   loginForm.addEventListener('submit', handleLogin)
   
   function handleLogin(event) {
+    console.log(event)
     event.preventDefault()
 
     const formData = new FormData(event.target)
     const username = formData.get('username')
-    const email = formData.get('email')
     const password = formData.get('password')
 
     const loginData = {
             username: username, 
-            email: email, 
             password: password
     }
 
@@ -130,6 +126,44 @@ const loginForm = document.querySelector('#login-form')
           console.log(result.token)
           localStorage.setItem("token", result.token)
       })
+
+    event.target.reset();
+  }
+
+
+  const signUpForm = document.querySelector('#sign-up-form')
+  signUpForm.addEventListener('submit', handleSignUp)
+  
+  function handleSignUp(event) {
+    console.log(event)
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    const username = formData.get('username')
+    const email = formData.get('email')
+    const password = formData.get('password')
+
+    console.log(password)
+
+    const signUpData = {
+        user: {
+            username: username, 
+            email: email,
+            password: password
+        }
+    }
+
+    const configObject = {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(signUpData)
+    }
+      fetch('http://localhost:4000/users', configObject)
+      .then(response => response.json())
+      .then(result => console.log(result))
 
     event.target.reset();
   }
