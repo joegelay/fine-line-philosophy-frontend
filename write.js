@@ -209,3 +209,9 @@ function submitEntry(entryData) {
         endScreen.classList.add('visible')
     }, 1800)
   }
+
+  // logout handling 
+  const logOutButton = document.querySelector('#logout-nav')
+  logOutButton.addEventListener('click', event => {
+    localStorage.removeItem("token")
+  })

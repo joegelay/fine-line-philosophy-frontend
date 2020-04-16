@@ -20,10 +20,9 @@
         <a href="../read.html">
             <div id="read-nav">READ</div>
         </a>
-        <a href="#" onclick="document.getElementById('id01').style.display='block'">
-            <div id="login-nav">LOGIN</div>
+        <a href="/">
+            <div id="logout-nav">LOG OUT</div>
         </a>
-
     </header>
 
     <main>
@@ -54,30 +53,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Modal Form -->
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
-
-        <!-- Form Content -->
-        <form id="login-form" class="modal-content animate">
-            <div id="modal-form-content" class="container">
-                <div class="form-section">
-                    <input class="modal-form-input" type="text" placeholder="Username" name="username" required>
-                </div>
-
-                <div class="form-section">
-                    <input class="modal-form-input" type="text" placeholder="Email" name="email" required>
-                </div>
-
-                <div class="form-section">
-                    <input class="modal-form-input" type="password" placeholder="Password" name="password" required>
-                </div>
-                <button class="submit-button" id="modal-submit" type="submit">LOGIN / CREATE ACCOUNT</button>
-            </div>
-        </form>
-    </div>
-
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
