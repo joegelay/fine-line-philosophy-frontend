@@ -2,6 +2,7 @@
 
 What's the line between... passion and obsesssion, contentment and compacency, confidence and arrogance? Fine Line Philosophy was created to parse out meaning, parallels, and contrasts of similar but often confused words or ideas such as these. 
 <br />
+<br />
 The site is built with JavaScript, Ruby on Rails, HTML, CSS, and ScrollMagic.js
 
 ### Required Versions
