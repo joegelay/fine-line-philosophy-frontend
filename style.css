@@ -1,4 +1,9 @@
-@import url(https://db.onlinewebfonts.com/c/efc7a6226bb9d41432255d1553a16c8d?family=VogaW00-Medium);
+/* @import url(https://db.onlinewebfonts.com/c/efc7a6226bb9d41432255d1553a16c8d?family=Voga W05 Medium); */
+
+@font-face {
+    font-family: "Voga W05 Medium";
+    src: url("fonts/dfa49e8a-ebd5-4963-86ca-4a3600a5fd87.woff2") format("woff2"), url("fonts/8031cced-bcf3-4d26-98a2-692412b52d74.woff") format("woff");
+}
 
 :root {
     --grey-900: hsl(41, 22%, 10%);
@@ -65,7 +70,7 @@ body {
 }
 
 #logo-one {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     letter-spacing: 1.5rem;
     font-size: 10rem;
     margin-left: 2rem;
@@ -131,7 +136,7 @@ main {
 }
 
 #tag-line.animate {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     color: var(--grey-900);
     font-size: 7rem;
     margin: -350px 0rem 2rem 0rem;
@@ -147,7 +152,7 @@ main {
 }
 
 .pairs {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     color: var(--grey-900);
     font-size: 5.5rem;
 }
@@ -209,7 +214,7 @@ main {
 }
 
 .read-write-nav {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     color: var(--grey-800);
     font-weight: normal;
     font-size: 3.2rem;
@@ -401,7 +406,7 @@ a:hover {
     background-color: var(--grey-100);
 
     color: var(--main-900);
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     text-decoration: underline;
     text-decoration-color: var(--main-500);
     font-size: 2rem;
