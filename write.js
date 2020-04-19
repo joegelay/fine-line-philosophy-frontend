@@ -11,7 +11,7 @@ const mainScene = new ScrollMagic.Scene({
 .setClassToggle('#main', 'fade-in') 
 .addTo(controller);
 
-fetch('http://localhost:4000/pairs')
+fetch('https://fine-line-philosophy.herokuapp.com/pairs')
     .then(response => response.json())
     .then(pairs => renderPairs(pairs))
 
@@ -104,7 +104,7 @@ function createForm () {
 }
 
 function getIdeas(pairId) {
-    fetch(`http://localhost:4000/pairs/${pairId}`)
+    fetch(`https://fine-line-philosophy.herokuapp.com/pairs/${pairId}`)
     .then(response => response.json())
     .then(pair => saveIdeaNamesAndIds(pair))
 }
@@ -194,7 +194,7 @@ function submitEntry(entryData) {
       },
       body: JSON.stringify(entryData)
   }
-    fetch('http://localhost:4000/entries/', configObject)
+    fetch('https://fine-line-philosophy.herokuapp.com/entries/', configObject)
   }
 
   function endScreen(){
