@@ -1,4 +1,7 @@
-@import url(https://db.onlinewebfonts.com/c/efc7a6226bb9d41432255d1553a16c8d?family=VogaW00-Medium);
+@font-face {
+    font-family: "Voga W05 Medium";
+    src: url("fonts/dfa49e8a-ebd5-4963-86ca-4a3600a5fd87.woff2") format("woff2"), url("fonts/8031cced-bcf3-4d26-98a2-692412b52d74.woff") format("woff");
+}
 
 :root {
     --grey-900: hsl(41, 22%, 10%);
@@ -38,7 +41,7 @@ body {
     justify-content: flex-end;
     height: 10vh;
     align-items: center;
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     font-size: 1.5rem;
     color: var(--grey-800);
 }
@@ -88,7 +91,7 @@ main {
 }
 
 .pairs {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     color: var(--grey-900);
     font-size: 5.5rem;
 }
@@ -210,7 +213,7 @@ a:hover {
     background-color: var(--grey-100);
 
     color: var(--main-900);
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     text-decoration: underline;
     text-decoration-color: var(--main-500);
     font-size: 2rem;
@@ -237,7 +240,7 @@ a:hover {
 }
 
 #read-entries {
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     font-size: 3.5rem;
     color: var(--grey-900);
 }
@@ -250,7 +253,7 @@ a:hover {
 /* Select box */
 .custom-select {
     position: relative;
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     margin-top: 0rem;
 }
 
@@ -267,7 +270,7 @@ a:hover {
 .select-selected {
     background-color: var(--grey-100);
     width: auto;
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     font-size: 5.5rem;
     text-decoration: underline var(--main-500);
     display: flex;
@@ -285,7 +288,7 @@ a:hover {
     color: var(--grey-900);
     padding: 8px 16px;
     cursor: pointer;
-    font-family: 'VogaW00-Medium';
+    font-family: 'Voga W05 Medium';
     font-size: 5rem;
     text-align: center;
 }
