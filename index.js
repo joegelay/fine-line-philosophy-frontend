@@ -44,7 +44,7 @@ const navScene = new ScrollMagic.Scene({
 .setClassToggle('.read-write', 'fade-in') 
 .addTo(controller);
 
-fetch('http://localhost:4000/pairs')
+fetch('https://fine-line-philosophy.herokuapp.com/pairs')
     .then(response => response.json())
     .then(pairs => renderPairs(pairs))
 
@@ -119,7 +119,7 @@ const loginForm = document.querySelector('#login-form')
         },
         body: JSON.stringify(loginData)
     }
-      fetch('http://localhost:4000/login', configObject)
+      fetch('https://fine-line-philosophy.herokuapp.com/login', configObject)
       .then(response => response.json())
       .then(result => chooseResultPath(result))
     
@@ -162,7 +162,7 @@ const loginForm = document.querySelector('#login-form')
         },
         body: JSON.stringify(signUpData)
     }
-      fetch('http://localhost:4000/users', configObject)
+      fetch('https://fine-line-philosophy.herokuapp.com/users', configObject)
       .then(response => response.json())
 
     event.target.reset();
