@@ -4,6 +4,9 @@ What's the line between... passion and obsesssion, contentment and compacency, c
 <br />
 <br />
 The site is built with JavaScript, Ruby on Rails, HTML, CSS, and ScrollMagic.js
+<br />
+<br />
+[Backend repo here](https://github.com/joegelay/fine-line-philosophy-backend)
 
 ### Required Versions
 
