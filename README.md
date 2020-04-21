@@ -3,35 +3,21 @@
 What's the line between... passion and obsesssion, contentment and compacency, confidence and arrogance? Fine Line Philosophy was created to parse out meaning, parallels, and contrasts of similar but often confused words or ideas such as these. 
 <br />
 <br />
-The site is built with JavaScript, Ruby on Rails, HTML, CSS, and ScrollMagic.js
+The site is built with Vanilla JavaScript, Ruby on Rails, HTML, CSS, and ScrollMagic.js
 <br />
 <br />
 [Backend repo here](https://github.com/joegelay/fine-line-philosophy-backend)
 
+### Guest Login
+
+If you'd like to explore the site without creating an account, feel free to use the guest credentials below. Please do create an account if you'd like to contribute an entry.
+
+- User: guest 
+- Password: guest 
+
 ### Required Versions
 
 - Rails 6.0+
-- Lite-Server
-
-### Executing Program
-
-Navigate to the Backend folder and run the following commands in order:<br />
-- `bundle-install`
-- `rails db:create`
-- `rails db:migrate`
-- `rails db:seed`
-
-### Starting the Frontend and Backend
-
-To start the servers you will need to:<br />
-- Backend:
-    - Navigate into the backend repo and run the following command: `rails s -p 4000`<br />
-- Frontend:
-    - Navigate into the frontend repo and run the following command: `lite-server`
-
-### Navigating to the Website
-
-After you have started running the Frontend and the Backend, then you will navigate to `http://localhost:3000/`.
 
 ### Video Demo
 
